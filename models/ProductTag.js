@@ -2,6 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
+//import Product and Tag models for associations
+const Product = require('./Product');
+const Tag = require('./Tag');
+
 class ProductTag extends Model {}
 
 ProductTag.init(
