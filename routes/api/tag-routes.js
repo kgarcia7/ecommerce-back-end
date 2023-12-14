@@ -41,7 +41,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   try { 
     // create a new tag
     const newTag = await Tag.create(req.body);
@@ -87,7 +87,7 @@ router.delete('/:id', async (req, res) => {
     res.json({ message: 'Tag deleted successfully' });
   } catch (err) {
     console.error(err);
-    res.status(404).json({ error: 'Server error'})
+    res.status(500).json({ error: 'Server error'})
   }
   // delete on tag by its `id` value
 });
